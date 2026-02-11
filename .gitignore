@@ -1,0 +1,20 @@
+# Dart
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Generated files
+*.g.dart
+*.freezed.dart
+
+# Test coverage
+coverage/
+
+# Binary
+cli-dart
