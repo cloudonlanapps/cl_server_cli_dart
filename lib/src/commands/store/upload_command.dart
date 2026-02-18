@@ -31,7 +31,8 @@ Future<void> runStoreUploadCommand(ArgResults args, CLIContext context) async {
     // Directory upload
     await _uploadDirectory(dir, parentId, yes, context);
   } else {
-    outputError(context, 'Path not found or not a directory (use --recursive for directories): $uploadPath');
+    outputError(context,
+        'Path not found or not a directory (use --recursive for directories): $uploadPath');
   }
 }
 
@@ -49,7 +50,7 @@ Future<void> _uploadFile(
       label: label ?? path.basename(file.path),
       description: description,
       parentId: parentId,
-      imagePath: file.path,
+      mediaPath: file.path,
     );
 
     if (!result.isSuccess || result.data == null) {
@@ -100,7 +101,7 @@ Future<void> _uploadDirectory(
         isCollection: false,
         label: path.basename(file.path),
         parentId: parentId,
-        imagePath: file.path,
+        mediaPath: file.path,
       );
 
       if (!context.config.outputJson) {
